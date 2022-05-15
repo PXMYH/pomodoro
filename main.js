@@ -2,12 +2,12 @@ const { app, BrowserWindow } = require('electron');
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
-    width: 400,
-    height: 400,
+    width: 200,
+    height: 220,
     show: false,
     movable: true,
-    frame: false,
-    transparent: true,
+    // frame: false,
+    // transparent: true,
   });
 
   mainWindow.loadFile('index.html');
