@@ -8,6 +8,7 @@ function createWindow() {
     movable: true,
     frame: false,
     transparent: true,
+    icon: __dirname + '/icon.icns',
   });
 
   mainWindow.loadFile('index.html');
