@@ -10,17 +10,17 @@
       }
       .circle {
         padding: 40px;
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         background: orange;
-        border-radius: 100px;
+        border-radius: 150px;
       }
     </style>
   </head>
   <div class="circle">
     <h1 style="text-align: center">Focus!</h1>
 
-    <p id="countdown"></p>
+    <p id="countdown" style="text-align: center"></p>
     <p id="start"></p>
     <div id="start_button" style="text-align: center">
       <button class="start_button" onclick="var countdown = startCountdown();">
@@ -40,8 +40,10 @@
             clearInterval(focusTimer);
             document.getElementById('countdown').innerHTML = 'Finished';
           } else {
+            var minutes = parseInt(timer / 60, 10);
+            var seconds = parseInt(timer % 60, 10);
             document.getElementById('countdown').innerHTML =
-              timer + ' seconds remaining';
+              minutes + ' m ' + seconds + 's remaining';
           }
           timer -= 1;
         }, 1000);
