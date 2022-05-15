@@ -6,8 +6,8 @@ function createWindow() {
     height: 270,
     show: false,
     movable: true,
-    // frame: false,
-    // transparent: true,
+    frame: false,
+    transparent: true,
   });
 
   mainWindow.loadFile('index.html');

@@ -17,42 +17,47 @@
       }
     </style>
   </head>
-  <div class="circle">
-    <h1 style="text-align: center">Focus!</h1>
+  <body style="-webkit-app-region: drag">
+    <div class="circle">
+      <h1 style="text-align: center">Focus!</h1>
 
-    <p id="countdown" style="text-align: center"></p>
-    <p id="start"></p>
-    <div id="start_button" style="text-align: center">
-      <button class="start_button" onclick="var countdown = startCountdown();">
-        Start
-      </button>
+      <p id="countdown" style="text-align: center"></p>
+      <p id="start"></p>
+      <div id="start_button" style="text-align: center">
+        <button
+          class="start_button"
+          onclick="var countdown = startCountdown();"
+        >
+          Start
+        </button>
+      </div>
+
+      <!-- <div id="stop_button">
+        <button class="stop_button" onclick="stopCountdown();">Stop</button>
+      </div> -->
+
+      <script>
+        function startCountdown() {
+          var timer = 25 * 60; // focus for 25 minutes
+          var focusTimer = setInterval(function () {
+            if (timer <= 0) {
+              clearInterval(focusTimer);
+              document.getElementById('countdown').innerHTML = 'Finished';
+            } else {
+              var minutes = parseInt(timer / 60, 10);
+              var seconds = parseInt(timer % 60, 10);
+              document.getElementById('countdown').innerHTML =
+                minutes + ' m ' + seconds + 's remaining';
+            }
+            timer -= 1;
+          }, 1000);
+          return focusTimer;
+        }
+
+        function stopCountdown() {
+          clearTimeout(countdown);
+        }
+      </script>
     </div>
-
-    <!-- <div id="stop_button">
-      <button class="stop_button" onclick="stopCountdown();">Stop</button>
-    </div> -->
-
-    <script>
-      function startCountdown() {
-        var timer = 25 * 60; // focus for 25 minutes
-        var focusTimer = setInterval(function () {
-          if (timer <= 0) {
-            clearInterval(focusTimer);
-            document.getElementById('countdown').innerHTML = 'Finished';
-          } else {
-            var minutes = parseInt(timer / 60, 10);
-            var seconds = parseInt(timer % 60, 10);
-            document.getElementById('countdown').innerHTML =
-              minutes + ' m ' + seconds + 's remaining';
-          }
-          timer -= 1;
-        }, 1000);
-        return focusTimer;
-      }
-
-      function stopCountdown() {
-        clearTimeout(countdown);
-      }
-    </script>
-  </div>
+  </body>
 </html>
