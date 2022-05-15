@@ -1,0 +1,23 @@
+{
+  "name": "red",
+  "version": "0.0.1",
+  "description": "red button",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PXMYH/red.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PXMYH/red/issues"
+  },
+  "homepage": "https://github.com/PXMYH/red#readme",
+  "devDependencies": {
+    "electron": "^18.2.3"
+  }
+}
