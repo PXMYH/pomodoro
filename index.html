@@ -1,36 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Red Button App</title>
+    <title>Big Red Button</title>
     <style>
       body {
         background: transparent;
         color: #fff;
       }
       .circle {
+        padding: 40px;
         width: 300px;
         height: 300px;
-        background: red;
+        background: orange;
         border-radius: 300px;
       }
     </style>
   </head>
   <div class="circle">
-    <h1>Count Down</h1>
+    <h1>Focus!</h1>
     <p id="countdown"></p>
+    <p id="start"></p>
+    <div id="start_button">
+      <button class="start_button" onclick="startCountdown();">Start</button>
+    </div>
+
     <script>
-      var timeleft = 10 * 60; // 10 minutes
-      var downloadTimer = setInterval(function () {
-        if (timeleft <= 0) {
-          clearInterval(downloadTimer);
-          document.getElementById('countdown').innerHTML = 'Finished';
-        } else {
-          document.getElementById('countdown').innerHTML =
-            timeleft + ' seconds remaining';
-        }
-        timeleft -= 1;
-      }, 1000);
+      function startCountdown() {
+        var timeleft = 25 * 60; // 25 minutes
+        var focusTimer = setInterval(function () {
+          if (timeleft <= 0) {
+            clearInterval(focusTimer);
+            document.getElementById('countdown').innerHTML = 'Finished';
+          } else {
+            document.getElementById('countdown').innerHTML =
+              timeleft + ' seconds remaining';
+          }
+          timeleft -= 1;
+        }, 1000);
+      }
     </script>
   </div>
 </html>
